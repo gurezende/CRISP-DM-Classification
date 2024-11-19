@@ -3,12 +3,18 @@
 ## Project Description
 This data science project uses the data mining lifecycle framework *CRISP-DM*. 
 
-**C**ross **I**ndustry **S**tandard **P**rocess for **D**ata **M**ining is a six step framework to guide Project Managers through the data mining process. It is widely adopted by the Data Science field given it is intuitive and effective. In the framework, the data scientist should go through each step of (1) Business Understanding; (2) Data Understanding; (3) Data Preparation; (4) Modeling; (5) Evaluation; and (6) Deployment unsing an iterative approach, since this framework is flexible.
+**C**ross **I**ndustry **S**tandard **P**rocess for **D**ata **M**ining is a six step framework to guide Project Managers through the data mining process. It is widely adopted by the Data Science field given it is intuitive and effective. In the framework, the data scientist should go through each step listed next unsing an iterative approach, knowing that this framework is flexible.
+* (1) Business Understanding; 
+* (2) Data Understanding; 
+* (3) Data Preparation; 
+* (4) Modeling; 
+* (5) Evaluation;
+* (6) Deployment 
 
 At each step, due to new learning, the raise of new business questions or insights that come up, the professional can go back and forth on the process to redesign it or enhance the analysis.
 
 #### CRISP-DM
-![Framework](img/CRISPDM.png)
+![Framework](images/CRISPDM.png)
 
 ## Business Problem
 This project aims to create classifier to predict the probability of a customer to convert when offered a financial product (direct term deposit) via a phone call.
