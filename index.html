@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>My Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/gurezende/CRISP-DM-Classification/edit/master/docs/index.md" class="nav-link">Edit on gurezende/CRISP-DM-Classification
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#data-science-project-management-with-crisp-dm" class="nav-link">Data Science Project Management With CRISP-DM</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-description" class="nav-link">Project Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#business-problem" class="nav-link">Business Problem</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#python-version" class="nav-link">Python Version</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modules" class="nav-link">Modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-quick-start" class="nav-link">Project Quick Start</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="data-science-project-management-with-crisp-dm">Data Science Project Management With CRISP-DM</h1>
+<hr />
+<h2 id="project-description">Project Description</h2>
+<p>This data science project uses the data mining lifecycle framework <em>CRISP-DM</em>. </p>
+<p><strong>C</strong>ross <strong>I</strong>ndustry <strong>S</strong>tandard <strong>P</strong>rocess for <strong>D</strong>ata <strong>M</strong>ining is a six step framework to guide Project Managers through the data mining process. It is widely adopted by the Data Science field given it is intuitive and effective. In the framework, the data scientist should go through each step of (1) Business Understanding; (2) Data Understanding; (3) Data Preparation; (4) Modeling; (5) Evaluation; and (6) Deployment unsing an iterative approach, since this framework is flexible.</p>
+<p>At each step, due to new learning, the raise of new business questions or insights that come up, the professional can go back and forth on the process to redesign it or enhance the analysis.</p>
+<h4 id="crisp-dm">CRISP-DM</h4>
+<p><img alt="Framework" src="img/CRISPDM.png" /></p>
+<h2 id="business-problem">Business Problem</h2>
+<p>This project aims to create classifier to predict the probability of a customer to convert when offered a financial product (direct term deposit) via a phone call.</p>
+<p><strong>Fixed-term</strong>: investment where money is deposited into an account at a financial institution. Term deposits are also known as certificates of deposit (CDs) or time deposits. Term deposits typically have higher interest rates than traditional savings accounts, but the funds are not accessible until the term ends.</p>
+<ul>
+<li>The Dataset can be found in <a href="https://archive.ics.uci.edu/dataset/222/bank+marketing">this link, from UCI DS Repository</a></li>
+</ul>
+<h2 id="python-version">Python Version</h2>
+<p>3.12.1</p>
+<h2 id="modules">Modules</h2>
+<ul>
+<li>uv &gt;= 0.5.1</li>
+<li>catboost &gt;= 1.2.5</li>
+<li>category-encoders &gt;= 2.6.4</li>
+<li>feature-engine &gt;= 1.8.2</li>
+<li>ipykernel &gt;= 6.29.5</li>
+<li>matplotlib &gt;= 3.9.2</li>
+<li>mkdocs &gt;= 1.6.1</li>
+<li>numpy == 1.26.4</li>
+<li>pandas &gt;= 2.2.3</li>
+<li>scikit-learn &gt;= 1.5.2</li>
+<li>seaborn &gt;= 0.13.2</li>
+<li>ucimlrepo &gt;= 0.0.7</li>
+</ul>
+<hr />
+<h2 id="project-quick-start">Project Quick Start</h2>
+<p>--</p>
+<h4 id="running-on-jupyter-notebook">Running on Jupyter Notebook</h4>
+<p>To run this project using a Jupyter notebook, install the modules and run the notebook.</p>
+<p>Running with Jupyter nb does not require to install the module <code>uv</code>.</p>
+<p><code>pip install *module_name*</code></p>
+<h4 id="running-with-ide">Running with IDE</h4>
+<ol>
+<li>Open a terminal</li>
+<li>Install the module <code>uv</code> for virtual environment management</li>
+<li>Run <code>pip install uv</code></li>
+<li>Run the command <code>uv init crispdm</code> (or use another name you like for the project)</li>
+<li>Access the folder created using bash command such as <code>cd folder_name</code></li>
+<li>Set the Python version for your project with <code>pyenv local 3.12.1</code></li>
+<li>Create the virtual environment with <code>uv venv --python 3.12.1</code></li>
+<li>Install the python modules with <ul>
+<li><code>uv add catboost, category_encoders, feature_engine, matplotlib, seaborn, numpy, pandas, scikit-learn, ucimlrepo</code></li>
+</ul>
+</li>
+<li>Run the code as a python file.</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2024-11-19 22:34:55.788958+00:00
+-->
