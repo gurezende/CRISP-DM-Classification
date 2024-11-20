@@ -14,7 +14,12 @@ This data science project uses the data mining lifecycle framework *CRISP-DM*.
 
 At each step, due to new learning, the raise of new business questions or insights that come up, the professional can go back and forth on the process to redesign it or enhance the analysis.
 
-#### CRISP-DM
+## Medium Article
+
+Find this project's complete description at this [Medium article](https://medium.com/towards-data-science/how-i-created-a-data-science-project-following-a-crisp-dm-lifecycle-8c0f5f89bba1?sk=f52e756c664f40ad267fd54b114ab901).
+
+
+#### CRISP-DM Framework
 ![Framework](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/330px-CRISP-DM_Process_Diagram.png)
 
 ## Business Problem
@@ -24,8 +29,13 @@ This project aims to create classifier to predict the probability of a customer 
 
 * The Dataset can be found in [this link, from UCI DS Repository](https://archive.ics.uci.edu/dataset/222/bank+marketing)
 
+---
+
 ## Python Version
-3.12.1
+
+This project was created using version **3.12.1**
+
+---
 
 ## Modules
 * uv >= 0.5.1
@@ -42,14 +52,18 @@ This project aims to create classifier to predict the probability of a customer 
 * ucimlrepo >= 0.0.7
 ---
 ## Project Quick Start
---
+
+The instructions to run this project are really simple. See them next.
+
+<br>
 
 #### Running on Jupyter Notebook
-To run this project using a Jupyter notebook, install the modules and run the notebook.
 
-Running with Jupyter nb does not require to install the module `uv`.
+1. Install the modules and run the notebook.
+    * Install modules using the command `pip install *module_name*`
+2. Running the project on Jupyter nb does not require to install the module `uv`.
 
-`pip install *module_name*`
+<br>
 
 #### Running with IDE
 
@@ -63,3 +77,12 @@ Running with Jupyter nb does not require to install the module `uv`.
 8. Install the python modules with 
     * `uv add catboost, category_encoders, feature_engine, matplotlib, seaborn, numpy, pandas, scikit-learn, ucimlrepo`
 9. Run the code as a python file.
+
+---
+
+## Contact
+
+This project was developed by **Gustavo R Santos**.<br>
+>Data Scientist with 13+ years of experience specializing in data analysis, machine learning, and visualization using Python, R, SQL, and PySpark. Author of *Data Wrangling with R* and instructor of a PySpark course, with a passion for sharing knowledge through blogging and teaching. MBA in Data Science & Analytics (USP, GPA 98%) with a proven track record of delivering impactful, data-driven business solutions.
+
+Find me via [Linkedin](https://www.linkedin.com/in/gurezende/)
