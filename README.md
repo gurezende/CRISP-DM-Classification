@@ -79,6 +79,10 @@ The application relies on a pre-trained classification model (saved as `model6.p
 
 **Note:** The accuracy and performance of the application are directly dependent on the quality and performance of the underlying machine learning model.
 
+## FinApp Screenshot
+![](images/FinApp%20screenshot.png)
+
+
 ## License
 
 MIT License
