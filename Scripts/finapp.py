@@ -40,7 +40,7 @@ with col1:
     month = st.selectbox("Month of last contact", ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])
     
 with col2:
-    campaign = st.slider("Number of contacts performed during this campaign", 1, 50, 1)
+    campaign = st.slider("Number of contacts performed during this campaign", 0, 50, 1)
     day = st.slider("Day of the month", 1, 31, 15)
     pdays = st.slider("Number of days that passed by after the client was last contacted from a previous campaign", 0, 100, 0)
 
