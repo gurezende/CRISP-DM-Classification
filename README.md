@@ -53,7 +53,7 @@ Before running the application, ensure you have the following installed:
 
 3.  **Run the Streamlit application:**
     ```bash
-    streamlit run term_deposit_app.py
+    streamlit run Scripts/finapp.py
     ```
     This command will open the application in your web browser.
 
