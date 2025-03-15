@@ -79,8 +79,14 @@ The application relies on a pre-trained classification model (saved as `model6.p
 
 **Note:** The accuracy and performance of the application are directly dependent on the quality and performance of the underlying machine learning model.
 
-## FinApp Screenshot
-![](images/FinApp%20screenshot.png)
+
+## Images
+<table>
+  <tr>
+    <td width="50%"><img src="images/FinApp screenshot.png" alt="App Image"></td>
+    <td width="50%"><img src="images/FinApp_demonstration.gif" alt="App GIF"></td>
+  </tr>
+</table>
 
 
 ## License
