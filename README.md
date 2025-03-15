@@ -49,7 +49,7 @@ Before running the application, ensure you have the following installed:
     Replace `[repository_url]` with the actual URL of your GitHub repository and `[repository_name]` with the name of the cloned directory.
 
 2.  **Ensure the model file is present:**
-    Make sure your trained model file (e.g., `term_deposit_model.pkl`) is in the same directory as the Streamlit application script (`term_deposit_app.py`).
+    Make sure your trained model file (e.g., `model6.pkl`) is in the same directory as the Streamlit application script (`finapp.py`).
 
 3.  **Run the Streamlit application:**
     ```bash
