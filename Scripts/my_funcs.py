@@ -4,6 +4,9 @@ import pandas as pd
 import numpy as np
 from feature_engine.encoding import OneHotEncoder
 import category_encoders as ce
+import numpy as np
+import math
+import plotly.graph_objects as go
 
 # Instance
 ohe = OneHotEncoder(variables=['marital', 'poutcome', 'education', 'contact', 'job', 'balance'], drop_last=True)
@@ -275,8 +278,6 @@ def prepare_data_simpler_streamlit(dtf):
   # Return
   return dtf.drop('y', axis=1)
 
-
-
 # Function to predict a single entry
 def predict_single_entry_simpler(observation, model):
   '''
@@ -297,5 +298,165 @@ def predict_single_entry_simpler(observation, model):
 
   # Return result
   return test_prediction
+
+
+def generate_levels(num_levels, min_radius=0.0, max_radius=1.0):
+    """
+    Generate evenly spaced radius values (levels) between a minimum and maximum radius.
+    Parameters:
+    - num_levels (int): The number of levels to generate.
+    - min_radius (float): The minimum radius value (default is 0.0).
+    - max_radius (float): The maximum radius value (default is 1.0).
+    Returns:
+    - list: A list of evenly spaced radius values between `min_radius` and `max_radius`.
+    """
+    return np.linspace(min_radius, max_radius, num_levels).tolist()
+
+
+def generate_points(levels, total_probs):
+    """
+    Distribute total probs across levels (interpreted as radii) 
+    proportionally to their circumferences, using floats for precision 
+    and adjusting for rounding errors.
+    Parameters:
+    - levels (list of float): Radii of the circles.
+    - total_probs (int): Total number of probs to distribute.
+    Returns:
+    - list of int: Number of probs assigned to each circle.
+    """
+    # Calculate circumferences
+    circumferences = [2 * math.pi * r for r in levels]
+    total_circumference = sum(circumferences)
+    
+    # Distribute probs proportionally using floats
+    proportional_points = [(circumference / total_circumference) * total_probs for circumference in circumferences]
+    
+    # Convert to integers and track the residuals
+    points_per_level = [int(p) for p in proportional_points]
+    residuals = [p - int(p) for p in proportional_points]
+    
+    # Adjust for rounding errors to match total_probs
+    while sum(points_per_level) < total_probs:
+        max_index = residuals.index(max(residuals))
+        points_per_level[max_index] += 1
+        residuals[max_index] = 0  # Prevent double adjustments
+
+    return points_per_level
+
+
+def generate_radii_theta(levels, points_per_level, theta_start, theta_end):
+    """
+    Generate radii and theta values for points to be plotted in a polar scatter plot.
+    Parameters:
+    - levels (list of float): A list of radius values (one for each level) defining the distance of each level from the origin.
+    - points_per_level (list of int): A list indicating the number of points to generate for each corresponding level.
+    - theta_start (float): The starting angle (in radians) for the angular range of the points.
+    - theta_end (float): The ending angle (in radians) for the angular range of the points.
+    Returns:
+    - tuple: Two lists:
+        - radii_sorted (list of float): The radii of the points, sorted first by angle and then by radius.
+        - theta_sorted (list of float): The angular positions of the points, sorted first by angle and then by radius.
+    """
+    radii = []
+    theta = []
+
+    for level, count in zip(levels, points_per_level):
+        level_theta_values = np.linspace(theta_start, theta_end, count, endpoint=True)
+        radii.extend([level] * count)  # Same radius for all points at this level
+        theta.extend(level_theta_values)  # Add theta values for this level
+
+    # Sort radii and theta by angle (theta), then by radius
+    radii_theta_sorted = sorted(zip(radii, theta), key=lambda x: (x[1], x[0]))
+    radii_sorted, theta_sorted = zip(*radii_theta_sorted)
+
+    return radii_sorted, theta_sorted
+
+
+def create_parliament_chart(parties, probs, colors, radii_sorted, theta_sorted, marker_size=10):
+    """
+    Create a Plotly figure to visualize the distribution of parliament probs.
+    Parameters:
+    - parties (list of str): Names of the political parties.
+    - probs (list of int): Number of probs allocated to each party.
+    - colors (list of str): Colors associated with each party, corresponding to their visualization.
+    - radii_sorted (list of float): Radii values (distances from the origin) for the points, sorted by angle and radius.
+    - theta_sorted (list of float): Angular positions (in degrees) for the points, sorted by angle and radius.
+    - marker_size (int, optional): Size of the markers representing the probs (default is 10).
+    Returns:
+    - plotly.graph_objects.Figure: A Plotly figure visualizing the seat distribution.
+    """
+    fig = go.Figure()
+    party_start_idx = 0
+    
+    for i, party in enumerate(parties):
+        party_end_idx = party_start_idx + probs[i]
+        
+        fig.add_trace(go.Scatterpolar(
+            r=radii_sorted[party_start_idx:party_end_idx],
+            theta=theta_sorted[party_start_idx:party_end_idx],
+            mode='markers',
+            marker=dict(
+                size=marker_size,
+                color=colors[i],
+                #line=dict(width=1, color='black')
+            ),
+            name=party,
+            legendgroup=party,
+            hovertemplate='Party: ' + party + '<br>probs: ' + str(probs[i]) + '<extra></extra>'
+        ))
+        
+        party_start_idx = party_end_idx
+
+    return fig
+
+
+def setup_layout(fig, title, subtitle, legend_orientation=None):
+    """
+    Set up the layout for the Plotly figure, including subtitle and footer.
+    
+    Parameters:
+    - fig: The Plotly figure object to update.
+    - title: The title of the figure.
+    - subtitle: The subtitle of the figure.
+    - footer: The footer of the figure.
+    - legend_orientation: (Optional) Orientation of the legend ('h' for horizontal, 'v' for vertical).
+    """
+    # Define annotation position
+    annotation_position = -0.0885 if legend_orientation == 'h' else -0.1015
+    
+    layout = dict(
+        title=title,
+        showlegend=True,
+        polar=dict(
+            radialaxis=dict(showline=False, showticklabels=False, linecolor='#0e1117', gridcolor = "#0e1117"),
+            angularaxis=dict(showline=False, showticklabels=False, linecolor='#0e1117', gridcolor = "#0e1117"),
+            bgcolor='#0e1117'
+        ),
+        height=600,
+        width=700,
+        font=dict(
+            family="Poppins, sans-serif",
+        ),
+        annotations=[
+            dict(
+                x=annotation_position, y=1.1, xref='paper', yref='paper',
+                text=subtitle, showarrow=False,
+                font=dict(size=14, color='grey'),
+                xanchor='left'
+            )
+        ]
+    )
+    
+    # Add legend settings if orientation is provided
+    if legend_orientation:
+        layout['legend'] = dict(
+            orientation=legend_orientation,
+            yanchor='bottom',
+            y=0.1 if legend_orientation == 'h' else 1,
+            xanchor='center',
+            x=0.5
+        )
+    
+    fig.update_layout(**layout)
 
 

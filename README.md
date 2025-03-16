@@ -83,8 +83,8 @@ The application relies on a pre-trained classification model (saved as `model6.p
 ## Images
 <table>
   <tr>
-    <td width="50%"><img src="images/FinApp screenshot.png" alt="App Image"></td>
-    <td width="50%"><img src="images/FinApp_demonstration.gif" alt="App GIF"></td>
+    <td width="50%"><img src="images/FinApp-Screenshot.png" alt="App Image"></td>
+    <td width="50%"><img src="images/FinApp-demonstration.gif" alt="App GIF"></td>
   </tr>
 </table>
 
