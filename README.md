@@ -12,7 +12,7 @@ Follow this link for project documentation.
 [Documentation](https://gurezende.github.io/CRISP-DM-Classification/)
 
 
-# Term Deposit Conversion Probability Predictor App
+## Term Deposit Conversion Probability Predictor App
 
 ![](images/CoverPicture-edit.png)
 
@@ -36,7 +36,7 @@ Before running the application, ensure you have the following installed:
 * **Python 3.6 or higher**
 * **Required Python Libraries:**
     ```bash
-    pip install streamlit pandas numpy scikit-learn matplotlib seaborn
+    pip install streamlit pandas numpy scikit-learn matplotlib seaborn plotly nbformat
     ```
 
 ## Getting Started
