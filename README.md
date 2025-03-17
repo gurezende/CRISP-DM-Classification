@@ -41,21 +41,28 @@ Before running the application, ensure you have the following installed:
 
 ## Getting Started
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [repository_url]
-    cd [repository_name]
-    ```
-    Replace `[repository_url]` with the actual URL of your GitHub repository and `[repository_name]` with the name of the cloned directory.
+#### Prerequisites
+Git installed on your system
+Docker and Docker Compose installed on your system
 
-2.  **Ensure the model file is present:**
-    Make sure your trained model file (e.g., `model6.pkl`) is in the same directory as the Streamlit application script (`finapp.py`).
+#### Step-by-Step Instructions
 
-3.  **Run the Streamlit application:**
-    ```bash
-    streamlit run Scripts/finapp.py
-    ```
-    This command will open the application in your web browser.
+1. Clone the Credit Risk repository:
+Run `git clone https://github.com/gurezende/CRISP-DM-Classification.git` in your terminal.
+This will download the CRISP-DM repository to your local machine
+
+2. Start the application using Docker Compose:
+Navigate to the crispd directory: `cd crispdm`<br>
+Run `docker-compose up --build` to build and start the containers.
+
+#### What to Expect
+The MLflow server will be available at http://localhost:5000<br>
+The Streamlit app will be available at http://localhost:8501
+
+#### Troubleshooting
+If you encounter any issues during the build process, check the Docker Compose logs for errors.<br>
+If you're unable to access the MLflow server or Streamlit app, ensure that the containers are running and that the ports are correctly mapped.
+
 
 ## Usage
 

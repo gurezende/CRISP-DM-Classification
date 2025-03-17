@@ -1,0 +1,17 @@
+services:
+  mlflow:
+    build:
+      context: ./mlflow-server
+    ports:
+      - "5000:5000"
+    command: mlflow server --host 0.0.0.0 --port 5000
+
+  streamlit:
+    build:
+      context: .
+    ports:
+      - "8501:8501"
+    depends_on:
+      - mlflow
+    environment:
+      - MLFLOW_SERVER_URL=http://mlflow:5000

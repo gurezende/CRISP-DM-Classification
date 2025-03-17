@@ -20,7 +20,7 @@ def load_model_from_mlflow():
     """Loads the model from MLflow."""
 
     # Making connection to the MLFlow server
-    mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+    mlflow.set_tracking_uri("http://mlflow:5000")
 
     # Start a MLFlow Client to get the latest model version
     client = mlflow.client.MlflowClient()
