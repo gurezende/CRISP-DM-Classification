@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/cc54a55e46be4b65bb335d57e49bd38b/artifacts
+end_time: 1742218064384
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: active
+run_id: cc54a55e46be4b65bb335d57e49bd38b
+run_name: luxuriant-cow-899
+run_uuid: cc54a55e46be4b65bb335d57e49bd38b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742218055319
+status: 3
+tags: []
+user_id: gurez

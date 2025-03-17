@@ -1,30 +1,53 @@
 # Streamlit App for Financial App
 # Predicting the probability of a customer to convert when offered a financial product (direct term deposit) via a phone call.
-
+#%%
 # Imports
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
+import mlflow
 import matplotlib.pyplot as plt
 import seaborn as sns
 from my_funcs import *
 
+# Set page config
+st.set_page_config(layout="centered")
+
+# ---------- Function to cache the model ----------
+
+@st.cache_resource
+def load_model_from_mlflow():
+    """Loads the model from MLflow."""
+
+    # Making connection to the MLFlow server
+    mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+
+    # Start a MLFlow Client to get the latest model version
+    client = mlflow.client.MlflowClient()
+
+    # Getting latest version
+    version = client.get_registered_model("Catboost_Simpler_Cols").latest_versions[0].version
+
+    # Import the latest model version
+    try:
+        model = mlflow.catboost.load_model(f"models:/Catboost_Simpler_Cols/{version}")
+    except FileNotFoundError:
+        st.error("Model file not found. Please ensure 'model.pkl' is in the same directory.")
+        st.stop()
+    except Exception as e:
+        st.error(f"Error loading model: {e}")
+        st.stop()
+
+    return model
+
 
 # ---------- Load the model ----------
-try:
-    filename = 'Scripts/model6.pkl'
-    model = pickle.load(open(filename, 'rb')) 
-except FileNotFoundError:
-    st.error("Model file not found. Please ensure 'model.pkl' is in the same directory.")
-    st.stop()
-except Exception as e:
-    st.error(f"Error loading model: {e}")
-    st.stop()
 
+model = load_model_from_mlflow()
+
+#-------------------------------------------------------
 
 # -------------- Define Predictor Inputs in Streamlit UI --------------
-st.set_page_config(layout="centered")
 st.title("Term Deposit Conversion Probability Predictor")
 st.write("Enter customer information to predict the probability of subscribing to a term deposit.")
 
@@ -70,6 +93,7 @@ input_df = prepare_data_simpler_streamlit(input_data)
 
 
 # ----------------- Make Prediction and Display Results ----------------
+
 if st.button("Predict"):
     try:
         prediction_proba = model.predict_proba(input_df)[0][1]  # Probability of class 1 (conversion)
@@ -129,3 +153,5 @@ if st.button("Predict"):
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
 
+
+# %%

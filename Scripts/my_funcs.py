@@ -29,11 +29,12 @@ def variable_to_category(data, variable, k):
 
 
 # Function to prepare the data for prediction
-def prepare_data_all_columns(dtf):
+def prepare_data_select_columns(dtf, cols_order):
   '''
   Function to prepare the data for prediction. The steps are the same used to prepare the training data.
   * Input:
-  dtf: dataframe
+  - dtf: dataframe
+  - cols_order: list of columns selected for the model
 
   * Output:
   data clean: dataframe with the cleaned data
@@ -106,12 +107,7 @@ def prepare_data_all_columns(dtf):
   dtf = ce.CatBoostEncoder().fit_transform(dtf, dtf['y'])
 
   # Reindex to match columns from the fitted model
-  # cols_order = ['y','default', 'housing', 'loan', 'day', 'contact_cellular', 'contact_telephone', 'month', 'campaign', 'pdays']
-
-  cols_order = ['y', 'age', 'default', 'housing', 'loan', 'day', 'month', 'campaign','pdays', 'previous', 'marital_divorced', 'marital_single',
-                'poutcome_unknown', 'poutcome_failure', 'poutcome_other', 'education_secondary', 'education_tertiary', 'contact_telephone',
-                'contact_cellular', 'job_technician', 'job_student', 'job_unemployed', 'job_blue-collar', 'job_management', 'job_services', 'job_admin.',
-                'job_retired', 'job_entrepreneur', 'job_housemaid', 'balance_over avg', 'balance_avg']
+  cols_order = cols_order
 
   # reindex
   dtf = dtf.reindex(columns=cols_order, fill_value=0)

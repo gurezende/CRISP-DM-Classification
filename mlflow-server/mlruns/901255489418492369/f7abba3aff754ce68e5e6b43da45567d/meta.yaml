@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/f7abba3aff754ce68e5e6b43da45567d/artifacts
+deleted_time: 1742216790461
+end_time: 1742216735781
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: deleted
+run_id: f7abba3aff754ce68e5e6b43da45567d
+run_name: dashing-crane-158
+run_uuid: f7abba3aff754ce68e5e6b43da45567d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742216719164
+status: 4
+tags: []
+user_id: gurez

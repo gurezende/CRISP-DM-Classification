@@ -1,0 +1,38 @@
+artifact_path: simpler_model
+flavors:
+  catboost:
+    catboost_version: 1.2.5
+    code: null
+    data: model.cb
+    model_type: CatBoostClassifier
+    save_format: cbm
+  python_function:
+    data: model.cb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.catboost
+    python_version: 3.12.1
+is_signature_from_type_hint: false
+mlflow_version: 2.21.0
+model_size_bytes: 7140697
+model_uuid: 95e0bc09c1524b4cb2d70f427ae7399d
+prompts: null
+run_id: 1f17198b6a084e308f2c6a8b7a900acc
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "long", "name": "default", "required": true}, {"type": "long",
+    "name": "housing", "required": true}, {"type": "long", "name": "loan", "required":
+    true}, {"type": "long", "name": "day", "required": true}, {"type": "long", "name":
+    "contact_cellular", "required": true}, {"type": "integer", "name": "contact_telephone",
+    "required": true}, {"type": "long", "name": "month", "required": true}, {"type":
+    "long", "name": "campaign", "required": true}, {"type": "double", "name": "pdays",
+    "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-03-17 13:42:49.991431'

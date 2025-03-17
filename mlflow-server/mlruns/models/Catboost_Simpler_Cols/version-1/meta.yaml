@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1742219071465
+current_stage: None
+description: ''
+last_updated_timestamp: 1742219071465
+name: Catboost_Simpler_Cols
+run_id: 1f17198b6a084e308f2c6a8b7a900acc
+run_link: ''
+source: mlflow-artifacts:/901255489418492369/1f17198b6a084e308f2c6a8b7a900acc/artifacts/simpler_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/901255489418492369/1f17198b6a084e308f2c6a8b7a900acc/artifacts/simpler_model
+user_id: null
+version: 1

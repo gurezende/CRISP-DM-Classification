@@ -1,0 +1,49 @@
+artifact_path: benchmark_model
+flavors:
+  catboost:
+    catboost_version: 1.2.5
+    code: null
+    data: model.cb
+    model_type: CatBoostClassifier
+    save_format: cbm
+  python_function:
+    data: model.cb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.catboost
+    python_version: 3.12.1
+is_signature_from_type_hint: false
+mlflow_version: 2.21.0
+model_size_bytes: 17751668
+model_uuid: 09e76822b6d44d22a37258d18fefb7c6
+prompts: null
+run_id: cc54a55e46be4b65bb335d57e49bd38b
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "age", "required": true}, {"type": "integer",
+    "name": "job_admin.", "required": true}, {"type": "integer", "name": "job_services",
+    "required": true}, {"type": "integer", "name": "job_management", "required": true},
+    {"type": "integer", "name": "job_blue-collar", "required": true}, {"type": "integer",
+    "name": "job_unemployed", "required": true}, {"type": "integer", "name": "job_student",
+    "required": true}, {"type": "integer", "name": "job_technician", "required": true},
+    {"type": "integer", "name": "contact_cellular", "required": true}, {"type": "integer",
+    "name": "contact_telephone", "required": true}, {"type": "integer", "name": "job_retired",
+    "required": true}, {"type": "integer", "name": "poutcome_failure", "required":
+    true}, {"type": "integer", "name": "poutcome_other", "required": true}, {"type":
+    "integer", "name": "marital_single", "required": true}, {"type": "integer", "name":
+    "marital_divorced", "required": true}, {"type": "double", "name": "previous",
+    "required": true}, {"type": "double", "name": "pdays", "required": true}, {"type":
+    "long", "name": "campaign", "required": true}, {"type": "long", "name": "month",
+    "required": true}, {"type": "long", "name": "day", "required": true}, {"type":
+    "long", "name": "loan", "required": true}, {"type": "long", "name": "housing",
+    "required": true}, {"type": "long", "name": "default", "required": true}, {"type":
+    "integer", "name": "poutcome_unknown", "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-03-17 13:27:37.412873'

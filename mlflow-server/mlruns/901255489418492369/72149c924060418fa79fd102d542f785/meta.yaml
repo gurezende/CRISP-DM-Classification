@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/72149c924060418fa79fd102d542f785/artifacts
+end_time: 1742218645939
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: active
+run_id: 72149c924060418fa79fd102d542f785
+run_name: merciful-horse-159
+run_uuid: 72149c924060418fa79fd102d542f785
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742218638096
+status: 3
+tags: []
+user_id: gurez

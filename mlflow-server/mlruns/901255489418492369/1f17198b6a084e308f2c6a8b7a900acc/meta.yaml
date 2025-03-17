@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/1f17198b6a084e308f2c6a8b7a900acc/artifacts
+end_time: 1742218976298
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: active
+run_id: 1f17198b6a084e308f2c6a8b7a900acc
+run_name: stately-loon-410
+run_uuid: 1f17198b6a084e308f2c6a8b7a900acc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742218968083
+status: 3
+tags: []
+user_id: gurez

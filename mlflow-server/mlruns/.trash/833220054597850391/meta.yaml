@@ -1,0 +1,7 @@
+artifact_location: mlflow-artifacts:/833220054597850391
+creation_time: 1742176089054
+experiment_id: '833220054597850391'
+last_update_time: 1742176102137
+lifecycle_stage: deleted
+name: credit-risk-training
+tags: {}

@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/9cd51c68001c453ba3af77a0c9e7caec/artifacts
+deleted_time: 1742218667434
+end_time: 1742218564209
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: deleted
+run_id: 9cd51c68001c453ba3af77a0c9e7caec
+run_name: serious-wren-385
+run_uuid: 9cd51c68001c453ba3af77a0c9e7caec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742218556674
+status: 4
+tags: []
+user_id: gurez

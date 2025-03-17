@@ -1,0 +1,9 @@
+cols_order = ['y', 'age', 'default', 'housing', 'loan', 'day', 'month', 'campaign','pdays', 'previous', 'marital_divorced', 'marital_single',
+                'poutcome_unknown', 'poutcome_failure', 'poutcome_other', 'education_secondary', 'education_tertiary', 'contact_telephone',
+                'contact_cellular', 'job_technician', 'job_student', 'job_unemployed', 'job_blue-collar', 'job_management', 'job_services', 'job_admin.',
+                'job_retired', 'job_entrepreneur', 'job_housemaid', 'balance_over avg', 'balance_avg']
+
+
+selected_cols = ['age',  'job_admin.', 'job_services', 'job_management', 'job_blue-collar', 'job_unemployed', 'job_student', 'job_technician',
+                                    'contact_cellular', 'contact_telephone', 'job_retired', 'poutcome_failure', 'poutcome_other', 'marital_single', 'marital_divorced',
+                                    'previous', 'pdays', 'campaign', 'month', 'day', 'loan', 'housing', 'default', 'poutcome_unknown', 'y']

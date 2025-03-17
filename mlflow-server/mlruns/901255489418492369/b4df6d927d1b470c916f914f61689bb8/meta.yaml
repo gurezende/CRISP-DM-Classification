@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/b4df6d927d1b470c916f914f61689bb8/artifacts
+deleted_time: 1742218982722
+end_time: 1742218955827
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: deleted
+run_id: b4df6d927d1b470c916f914f61689bb8
+run_name: bouncy-smelt-743
+run_uuid: b4df6d927d1b470c916f914f61689bb8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742218953965
+status: 4
+tags: []
+user_id: gurez

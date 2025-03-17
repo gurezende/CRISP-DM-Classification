@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/282b5d49e18e41efb223361764f2930d/artifacts
+deleted_time: 1742216710020
+end_time: 1742216634017
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: deleted
+run_id: 282b5d49e18e41efb223361764f2930d
+run_name: puzzled-fawn-81
+run_uuid: 282b5d49e18e41efb223361764f2930d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742216614312
+status: 4
+tags: []
+user_id: gurez

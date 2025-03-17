@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/901255489418492369/90827bd127454eecb686e5b748ff59ab/artifacts
+deleted_time: 1742216578314
+end_time: 1742216546772
+entry_point_name: ''
+experiment_id: '901255489418492369'
+lifecycle_stage: deleted
+run_id: 90827bd127454eecb686e5b748ff59ab
+run_name: adaptable-shark-686
+run_uuid: 90827bd127454eecb686e5b748ff59ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742216546633
+status: 4
+tags: []
+user_id: gurez
